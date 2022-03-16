@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <head>
+    <title>Werkcollege 3 - Oefening 2</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin-left: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        font-size: 16px;
+        padding: 5px;
+        -webkit-appearance: none;
+      }
+      input[type="search"] {
+        border: 1px solid gray;
+      }
+      input[type="submit"] {
+        color: white;
+        background-color: #2275D3;
+        border: 1px solid #2275D3;
+      }
+      div {
+        margin-top: 10px;
+      }
+      ul {
+        padding-left: 0;
+        margin-top: 0;
+      }
+      li {
+        list-style-type: none;
+        font-size: 14pt;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>City weather</h1>
+    <form id="form">
+      <label for="search">
+        City name
+      </label>
+      <input type="search" id="search" />
+      <input type="submit" value="Get weather" />
+    </form>
+    <div id="weatherResult">
+    </div>
+    <div id="countryResult">
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
