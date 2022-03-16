@@ -1,9 +1,30 @@
 "use strict";
-async function loadAsync() {
-  const emojiResponse = await fetch('https://api.myjson.com/bins/1edx4o');
-  const emojiJSON = await emojiResponse.json();
-  const emojiList = emojiJSON.map(({ symbol, name }) => `<li>${symbol} ${name}</li>`).join("");
-  document.getElementById("list").innerHTML = emojiList;
+
+let emojis = [];
+
+async function getData() {
+  console.log("Request the API!");
+
+  console.log("Before fetch");
+  fetch('https://api.jsonserve.com/PG3nwa')
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    const listHtml = document.getElementById('list');
+    let htmlString = '';
+
+    data.forEach(emoji => {
+      console.log(emoji);
+      htmlString += `<li>${emoji.symbol} ${emoji.name}</li>`
+    });
+
+    listHtml.innerHTML = htmlString;
+
+  })
 }
 
-loadAsync();
+
+
+getData()
